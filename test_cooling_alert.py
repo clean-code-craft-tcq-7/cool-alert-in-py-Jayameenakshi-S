@@ -1,16 +1,16 @@
 import unittest
 # ---------- STEP 2 code starts ----------
-#from cooling_alert import CoolingType, ActionType, battery_temperature_to_action
+from cooling_alert import CoolingType, ActionType, battery_temperature_to_action
 
-#class TestCoolingAlert(unittest.TestCase):
-#    def test_passive_cooling_alert_to_email(self):
-#        action = battery_temperature_to_action(CoolingType.PASSIVE_COOLING, 45.0)
-#        self.assertEqual(action.action_type, ActionType.ALERT_EMAIL)
-#        self.assertEqual(action.action_body, "Temperature alert: 45.0")
-#    
-#    def test_no_alert(self):
-#        action = battery_temperature_to_action(CoolingType.PASSIVE_COOLING, 32)
-#        self.assertEqual(action.action_type, ActionType.NO_ALERT)
+class TestCoolingAlert(unittest.TestCase):
+   def test_passive_cooling_alert_to_email(self):
+       action = battery_temperature_to_action(CoolingType.PASSIVE_COOLING, 45.0)
+       self.assertEqual(action.action_type, ActionType.ALERT_EMAIL)
+       self.assertEqual(action.action_body, "Temperature alert: 45.0")
+   
+   def test_no_alert(self):
+       action = battery_temperature_to_action(CoolingType.PASSIVE_COOLING, 32)
+       self.assertEqual(action.action_type, ActionType.NO_ALERT)
 # ---------- STEP 2 code ends ----------
 
 # ---------- STEP 4 code starts ----------
