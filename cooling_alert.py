@@ -23,9 +23,9 @@ def battery_temperature_to_action(cooling_type: CoolingType, temperature: float)
    action = Action(action_type=0, action_body="")
 # ---------- STEP 2 code ends ----------
 # ---------- STEP 3 code starts ----------
-#    if cooling_type == CoolingType.PASSIVE_COOLING and temperature > PASSIVE_COOLING_LIMIT:
-#        action.action_type = ActionType.ALERT_EMAIL
-#        action.action_body = f"Temperature alert: {temperature:.1f}"
+   if cooling_type == CoolingType.PASSIVE_COOLING and temperature > PASSIVE_COOLING_LIMIT:
+       action.action_type = ActionType.ALERT_EMAIL
+       action.action_body = f"Temperature alert: {temperature:.1f}"
 # ---------- STEP 3 code ends ----------
 # ---------- STEP 4 code starts ----------
 #    elif cooling_type == CoolingType.HI_ACTIVE_COOLING and temperature > HI_ACTIVE_COOLING_LIMIT:
@@ -34,8 +34,8 @@ def battery_temperature_to_action(cooling_type: CoolingType, temperature: float)
 # ---------- STEP 4 code ends ----------
 # ---------- STEP 3 code starts ----------
 #    else:
-#        action.action_type = ActionType.NO_ALERT
-#        action.action_body = ""
+       action.action_type = ActionType.NO_ALERT
+       action.action_body = ""
 # ---------- STEP 3 code ends ----------
 # ---------- STEP 2 code starts ----------    
    return action
